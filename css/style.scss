@@ -9,6 +9,7 @@
 	} 
 
 body{
+	padding-top: 100px;
 	font-family: 'Open Sans';
 	font-size: 14px;
 	line-height: 1.6;
@@ -19,7 +20,13 @@ body{
 
 .frestyle-txt{
 	font-family: 'Calligraffitti' ;
-	font-size:  3em;
+	font-size:  40px;
+	@media (max-width:1025px) {
+		font-size: 35px;
+	}
+	@media (max-width:780px) {
+		font-size: 25px;
+	}
 }
 
 .white-txt{
@@ -47,68 +54,89 @@ h2{
 }
 //backgrounds header colors: #5363db #5b6ceb ;
 
+
+
 header{
-	
-	height:15%;
+	top: 0px;
+	position: fixed;
+	height:100px;
 	width: 100%;
-	
+	position: -webkit-sticky;
+	background-color: #ffffff;
 	padding: 10px;
-	padding-left: 8%;
-	padding-right: 8%;
+	//padding-left: 8%;
+	//padding-right: 8%;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: row;
+	justify-content: space-around;
 	align-items: center;
 	box-shadow: 2px 2px 7px rgba(0,0,0,0.15);
-
+	z-index: 2;
 	.menu{
 		@media (max-width:690px) {
 			display: none;
 		}
-		display: inline-block;
+		display: inline;
 		list-style: none;
 		box-sizing: content-box;
-		
 
-			display:inline-flex;
-			width: -webkit-max-content;
-			width: -moz-max-content;
-			width: max-content;
-			li{
-			margin-right: 20px;
-			}
+		display:inline-flex;
+		li{
+		margin-right: 20px;
+		}
 
 	}
 }
-.bg1{background:  url('../img/bg-01.jpg') center no-repeat;}
-.bg2{background:  url('../img/bg-02.jpg') center no-repeat;}
+.bg1{
+	background:  url('../img/bg-01.jpg') center no-repeat;
+	background-size: cover;
+}
+.bg2{
+	background:  url('../img/bg-02.jpg') center no-repeat;
+	background-size: cover;
+}
 .bg3{
 	background:  url('../img/bg-03.jpg') right no-repeat;
 	background-size: cover;
 }
 
 .login_div{
-	background: rgba($color: #5363DB, $alpha: 0.8);
+	background: center rgba($color: #5363DB, $alpha: 0.8);
+	background-size: cover;
 
 	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: center;
 	align-content: center;
 	padding: 8% ;
 	
 	.text{
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		text-align: left;
 		padding-left: 5%;
+
+		max-width: 600px;
 		
 		
 		h2{
-			font-size: 5em;
+			font-size: 67px;
+			font-weight: 700;
 			text-transform: uppercase;
+			@media (max-width:1025px) {
+				font-size: 50px;
+			}
+
+			@media (max-width:780px) {
+				font-size: 37px;
+			}
 			
 		}
+		
+		
 	}
 }
 .login_block{
@@ -117,12 +145,15 @@ header{
 	border-radius: 20px;
 	flex-basis: 30%;
 	min-width: 300px;
+	max-width: 350px;
 	min-height: 391px;
+	max-height: 460px;
+	
 	
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-	padding:20px;
+	justify-content: space-between;
+	padding:30px 20px;
 	box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.15);
 
 	
@@ -167,10 +198,10 @@ header{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: 10% 0;
+	justify-content: stretch;
+	padding: 8% 0;
 
 	h2{
-		
 		margin-bottom: 20px;
 		color: #5b6ceb;
 		
@@ -194,19 +225,20 @@ header{
 .program_block{
 	margin: 10px;
 	flex-basis: 40%;
-	max-width: 570px;
 	min-width: 300px;
+	min-height: 350px;
 	box-shadow:4px 4px 20px 0px rgba(0,0,0,0.1);
 
 	display: flex;
 	flex-direction: row;
-	justify-content: stretch;
+	justify-content: center;
 	text-align: left;
-	div{
+	.text{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-content: flex-start;
+		align-content: center;
+		padding: 10px;
 	}
 
 	h3{
@@ -217,10 +249,33 @@ header{
 		margin-bottom: 10px;
 	}
 	
-	img{
+	.img_prog{
 		align-self: flex-start;
-		max-width: 50%;
-		margin-right: 2%;
+		left: 0;
+		min-width: 50%;
+		height: 100%;
+		overflow: hidden;
+		background: yellow;
+		background-size: cover;
+
+		border-bottom-left-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+	.img1{
+		background: center no-repeat url('../img/img-01.jpg');
+		background-size: cover;
+	}
+	.img2{
+		background: center no-repeat url('../img/img-02.jpg');
+		background-size: cover;
+	}
+	.img3{
+		background: center no-repeat url('../img/img-03.jpg');
+		background-size: cover;
+	}
+	.img4{
+		background: center no-repeat url('../img/img-04.jpg');
+		background-size: cover;
 	}
 }
 
@@ -256,35 +311,66 @@ header{
 .about_container{
 	width: 100%;
 	
-	padding: auto;
+	padding: 0 20px;
 	display: flex;
 	flex-direction: row-reverse;
-	flex-wrap: wrap;
-	justify-content: center;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	@media (max-width:1000px) {
+		justify-content: center;
+	}
+	@media (max-width:610px) {
+		flex-wrap: wrap;
+	}
 
 	.img_block{
-		flex-basis: 40%;
-		margin: 10px;
-		box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.15);
 		display: flex;
-		flex-direction: row;
-		align-content: center;
-
-		.arrow{
-			align-self: center;
-			height: 50px;
-			width: 50px;
-			border-radius: 50%;
-			background-color: #ffffff;
-			border-radius: 50%;
+		
+		margin-left: 10px;
+		box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.15);
+		border-radius: 10px;
+		overflow: hidden;
+		flex-shrink: 2;
+		flex-grow: 1;
+		min-width: 300px;
+		max-width: 570px;
+		min-height: -webkit-min-content;
+		min-height: -moz-min-content;
+		min-height: min-content;
+		//height: 80%;
+		//.arrow{
+		//	align-self: center;
+		//	height: 50px;
+		//	width: 50px;
+		//	border-radius: 50%;
+		//	background-color: #ffffff;
+		//	border-radius: 50%;
+		//}
+		img{
+			flex-shrink: 1.5;
+			flex-grow: 1;
+			min-width: 300px;
+			@media (max-width:1000px) {
+				max-height: 220px;
+			}
+			@media (max-width:780px) {
+				max-height: 200px;
+			}
 		}
 	}
 	.text_block{
+		//flex-basis: 40%;
+		
+		align-self: start;
 		text-align: left;
+		flex-grow: 1;
+		flex-shrink: 1;
+		//min-width: 40%;
 		h2{
 			color: #5b6ceb;
 			font-weight: 700;
-			margin: 20px 0;
+			margin-bottom: 20px ;
 		}
 		flex-basis: 40%;
 		margin: 10px;
@@ -299,6 +385,9 @@ header{
 	background-color:rgba($color: #5363DB, $alpha: 0.8);
 	
 	padding: 10% 10px;// change with smaler screen
+	//@media(max-width:1024px){
+	//	padding: 10% 10px;
+	//}
 	
 
 }
@@ -315,7 +404,7 @@ header{
 	margin: 10px;// change with smaler screen
 
 	flex-basis: 20%;
-	min-width: 200px;
+	min-width: 150px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -353,6 +442,7 @@ header{
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 	.price_block{
 		background-color: #ffffff;
@@ -366,6 +456,7 @@ header{
 		box-shadow: 6px 6px 50px 0px rgba(0,0,0,0.1);
 		border-radius: 5px;
 		margin:0 10px;
+		margin-top: 20px;
 		padding-bottom: 3%;
 
 		input[type='button']{
@@ -402,7 +493,7 @@ header{
 			color: #ffffff;
 		}
 		span>span{
-			font-size: 3em;
+			font-size: 2.5em;
 			color: #ffffff;
 		}
 		.dolar::before{
@@ -414,41 +505,55 @@ header{
 
 
 .about_contact{
-	h3{ font-size: 1.2em; margin-bottom: 20px; font-weight: 700;}
+	h3{ font-size: 18px; margin-bottom: 30px; font-weight: 700;}
 
 	background-color: #5b6ceb;
-	padding: 10% 10px;
+	padding: 5% 20px;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-wrap: wrap;
+	justify-content: stretch;
+	@media (max-width:780px) {
+		flex-direction: column;
+	}
 	
 .about_block{
 	text-align: left;
-	margin: 0 10px;
+	margin: 20px 10px;
 	flex-basis: 45%;
 }
-.fas, .far{font-size: 1.3em;}
+.fas, .far, .fab{font-size: 18px;}
+ .SN_icons{
+	 margin: 20px 10px;
+	 display: flex;
+	 flex-direction: row;
+	 align-self: flex-start;
+	 justify-content: space-between;
+	 min-width: 150px;
+	 max-width: 300px;
+ }
 
 .contact_block{
 
 	text-align: left;
-	margin: 0 10px;
+	margin: 20px 10px;
 	flex-basis: 45%;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	
 
 	.contacts{
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 	
 	}
 	.contacts_item{
 		flex-basis: 45%;
+		min-width: 150px;
 		margin-bottom: 20px; //change
 		
 		display: flex;
@@ -469,7 +574,10 @@ Footer{
 		
 	background-color: #5363db;
 	width: 100%;
-	height: 100px;//change
+	height: 80px;//change
+	@media (max-width:786px) {
+		height: 50px;	
+	}
 	
 	display: flex;
 	justify-content: center;
