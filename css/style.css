@@ -120,6 +120,9 @@ header .menu {
 header .menu li {
   margin-right: 20px;
 }
+.menu li:hover {
+	color: #5363db;
+}
 
 .bg1 {
   background: url("../img/bg-01.jpg") center no-repeat;
